@@ -10,7 +10,7 @@ FROM debian:7
 RUN \
   apt-get update -y \
   && apt-get install -y wget logrotate ca-certificates \
-  && wget "http://browser.qe.aerospike.com/citrusleaf/aerospike-server/3.6.4-275-ge4364d7/build/debian-7/community/artifacts/aerospike-server-community-3.6.4-275.debian7.x86_64.deb" \
+  && wget "https://s3.amazonaws.com/aerospike-geo-ea-2015-12/aerospike-server/3.6.4-275-ge4364d7/build/debian-7/community/artifacts/aerospike-server-community-3.6.4-275.debian7.x86_64.deb" \
   && dpkg -i aerospike-server-*.deb \
   && apt-get purge -y --auto-remove wget ca-certificates \
   && rm -rf aerospike-server*.deb aerospike /var/lib/apt/lists/*
